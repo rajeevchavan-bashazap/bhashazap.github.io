@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - BhashaZap</title>
+    
+    <!-- Favicon and PWA -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/assets/images/android-chrome-192x192.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4FC3F7">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fbff;
+        }
+
+        .header {
+            background: white;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 2px solid #4FC3F7;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+
+        .header .description {
+            color: #666;
+            max-width: 700px;
+            margin: 1rem auto 0;
+            line-height: 1.8;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: -2rem auto 3rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: 2px solid #e0e0e0;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #4FC3F7;
+        }
+
+        .search-btn {
+            background: #4FC3F7;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            background: #29B6F6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(79, 195, 247, 0.2);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-card h3 {
+            color: #4FC3F7;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .category-card .article-count {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .help-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .help-section h2 {
+            color: #4FC3F7;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #4FC3F7;
+            padding-bottom: 0.5rem;
+        }
+
+        .help-section h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .help-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .help-section ul, .help-section ol {
+            margin: 1rem 0 1rem 2rem;
+            color: #666;
+        }
+
+        .help-section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .help-article {
+            background: #f8fbff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #4FC3F7;
+            margin-bottom: 1.5rem;
+        }
+
+        .help-article h4 {
+            color: #4FC3F7;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .help-article p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #4FC3F7, #29B6F6);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-box a {
+            display: inline-block;
+            background: white;
+            color: #4FC3F7;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+
+        .contact-box a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .back-link {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .back-link a {
+            display: inline-block;
+            background: #4FC3F7;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-link a:hover {
+            background: #29B6F6;
+            transform: translateY(-2px);
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .quick-link {
+            background: #f8fbff;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #4FC3F7;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .quick-link:hover {
+            background: white;
+            box-shadow: 0 3px 10px rgba(79, 195, 247, 0.2);
+            transform: translateX(5px);
+        }
+
+        .quick-link a {
+            color: #4FC3F7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Help Center</h1>
+        <p class="subtitle"><span style="color: #4FC3F7;">Bhasha</span><span style="color: #FF5722;">Zap</span></p>
+        <p class="description">Find answers, get help, and learn everything you need to know about BhashaZap</p>
+    </div>
+
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search for help articles..." />
+            <button class="search-btn" onclick="searchHelp()">Search</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="categories">
+            <div class="category-card" onclick="scrollToSection('getting-started')">
+                <div class="category-icon">🚀</div>
+                <h3>Getting Started</h3>
+                <p>Installation and setup guides</p>
+                <span class="article-count">5 articles</span>
+            </div>
+
+            <div class="category-card" onclick="scrollToSection('using-bhashazap')">
+                <div class="category-icon">💡</div>
+                <h3>Using BhashaZap</h3>
+                <p>Learn how to use features</p>
+                <span class="article-count">8 articles</span>
+            </div>
+
+            <div class="category-card" onclick="scrollToSection('troubleshooting')">
+                <div class="category-icon">🔧</div>
+                <h3>Troubleshooting</h3>
+                <p>Fix common issues</p>
+                <span class="article-count">6 articles</span>
+            </div>
+
+            <div class="category-card" onclick="scrollToSection('languages')">
+                <div class="category-icon">🌍</div>
+                <h3>Languages</h3>
+                <p>Language support and translations</p>
+                <span class="article-count">4 articles</span>
+            </div>
+        </div>
+
+        <!-- Getting Started Section -->
+        <div class="help-section" id="getting-started">
+            <h2>🚀 Getting Started</h2>
+
+            <div class="help-article">
+                <h4>How do I install BhashaZap?</h4>
+                <p><strong>Step-by-step installation:</strong></p>
+                <ol>
+                    <li>Visit the Chrome Web Store</li>
+                    <li>Search for "BhashaZap" or click our direct link</li>
+                    <li>Click the "Add to Chrome" button</li>
+                    <li>Confirm by clicking "Add extension" in the popup</li>
+                    <li>The BhashaZap icon will appear in your browser toolbar</li>
+                </ol>
+                <p>Installation takes less than 30 seconds!</p>
+                
+                <p style="margin-top: 1.5rem;"><strong>📌 IMPORTANT: Pin the Extension (Recommended)</strong></p>
+                <p>Pinning BhashaZap makes it easily accessible so you can change settings anytime:</p>
+                <ol>
+                    <li>Look for the <strong>puzzle piece icon (Extensions)</strong> in your browser toolbar (top-right corner)</li>
+                    <li>Click the puzzle piece icon to open the extensions menu</li>
+                    <li>Find "BhashaZap" in the list</li>
+                    <li>Click the <strong>pin icon 📌</strong> next to BhashaZap</li>
+                    <li>The BhashaZap icon will now stay visible in your toolbar</li>
+                </ol>
+                <p style="background: #e3f2fd; padding: 1rem; border-radius: 6px; margin-top: 1rem;"><strong>💡 Tip:</strong> With the extension pinned, you can quickly access settings, change languages, adjust popup duration, and enable/disable the extension with just one click!</p>
+            </div>
+
+            <div class="help-article">
+                <h4>First-time setup guide</h4>
+                <p>After installation:</p>
+                <ol>
+                    <li>Click the BhashaZap icon in your browser toolbar</li>
+                    <li>Select your two preferred Indian languages from the dropdown menus</li>
+                    <li>Choose your popup display duration (5-30 seconds)</li>
+                    <li>Click "Save Settings"</li>
+                    <li>You're ready to start translating!</li>
+                </ol>
+            </div>
+
+            <div class="help-article">
+                <h4>System requirements</h4>
+                <p><strong>Supported browsers:</strong></p>
+                <ul>
+                    <li>Google Chrome (version 90 or higher)</li>
+                    <li>Microsoft Edge (Chromium-based)</li>
+                    <li>Brave Browser</li>
+                    <li>Opera</li>
+                </ul>
+                <p><strong>Operating systems:</strong> Windows, macOS, Linux, Chrome OS</p>
+            </div>
+
+            <div class="help-article">
+                <h4>How to uninstall BhashaZap</h4>
+                <p>If you need to remove BhashaZap:</p>
+                <ol>
+                    <li>Right-click the BhashaZap icon in your toolbar</li>
+                    <li>Select "Remove from Chrome"</li>
+                    <li>Confirm the removal</li>
+                </ol>
+                <p>All local data will be automatically deleted.</p>
+            </div>
+        </div>
+
+        <!-- Using BhashaZap Section -->
+        <div class="help-section" id="using-bhashazap">
+            <h2>💡 Using BhashaZap</h2>
+
+            <div class="help-article">
+                <h4>How do I translate a word?</h4>
+                <p>Translation is simple:</p>
+                <ol>
+                    <li>Navigate to any webpage</li>
+                    <li>Double-click on any English word</li>
+                    <li>A popup will appear instantly with translations</li>
+                    <li>The popup shows the word in English and your two selected Indian languages</li>
+                </ol>
+            </div>
+
+            <div class="help-article">
+                <h4>Changing your language preferences</h4>
+                <p>To change languages:</p>
+                <ol>
+                    <li>Click the BhashaZap icon in your toolbar</li>
+                    <li>Select new languages from the dropdown menus</li>
+                    <li>Click "Save Settings"</li>
+                    <li>Your new preferences take effect immediately</li>
+                </ol>
+            </div>
+
+            <div class="help-article">
+                <h4>Adjusting popup duration</h4>
+                <p>Customize how long translations stay visible:</p>
+                <ul>
+                    <li>Open BhashaZap settings from the toolbar icon</li>
+                    <li>Select duration: 5, 10, 15, 20, 25, or 30 seconds</li>
+                    <li>Choose based on your reading speed</li>
+                    <li>Default is 10 seconds</li>
+                </ul>
+            </div>
+
+            <div class="help-article">
+                <h4>Temporarily disabling BhashaZap</h4>
+                <p>To turn off translations without uninstalling:</p>
+                <ol>
+                    <li>Click the BhashaZap icon</li>
+                    <li>Toggle the "Extension Status" switch to OFF</li>
+                    <li>Toggle back to ON when you want to use it again</li>
+                </ol>
+            </div>
+
+            <div class="help-article">
+                <h4>Does BhashaZap work offline?</h4>
+                <p><strong>Yes!</strong> BhashaZap works completely offline for most common words. The dictionary is stored locally on your device, so no internet connection is required for translations.</p>
+            </div>
+        </div>
+
+        <!-- Troubleshooting Section -->
+        <div class="help-section" id="troubleshooting">
+            <h2>🔧 Troubleshooting</h2>
+
+            <div class="help-article">
+                <h4>Extension not working at all</h4>
+                <p><strong>Try these solutions:</strong></p>
+                <ol>
+                    <li>Check if BhashaZap is enabled (icon should be colored, not grayed out)</li>
+                    <li>Refresh the webpage you're on (press F5)</li>
+                    <li>Restart your browser completely</li>
+                    <li>Disable and re-enable the extension</li>
+                    <li>If still not working, try uninstalling and reinstalling</li>
+                </ol>
+            </div>
+
+            <div class="help-article">
+                <h4>Popup not appearing when I double-click</h4>
+                <p><strong>Common causes and fixes:</strong></p>
+                <ul>
+                    <li><strong>Extension is disabled:</strong> Check the toolbar icon</li>
+                    <li><strong>Word not in dictionary:</strong> Try a different, more common word</li>
+                    <li><strong>Website restrictions:</strong> Some secure sites block extensions</li>
+                    <li><strong>Languages not selected:</strong> Verify you've chosen two languages in settings</li>
+                    <li><strong>Page needs refresh:</strong> Reload the page after enabling BhashaZap</li>
+                </ul>
+            </div>
+
+            <div class="help-article">
+                <h4>Translations are incorrect or incomplete</h4>
+                <p>If you find translation issues:</p>
+                <ul>
+                    <li>Some technical or specialized terms may not be available</li>
+                    <li>Context-dependent meanings might vary</li>
+                    <li>Please report incorrect translations via our feedback form</li>
+                    <li>We continuously update our dictionary based on user feedback</li>
+                </ul>
+            </div>
+
+            <div class="help-article">
+                <h4>Extension slowing down my browser</h4>
+                <p>BhashaZap is optimized to be lightweight, but if you experience issues:</p>
+                <ol>
+                    <li>Close unnecessary browser tabs</li>
+                    <li>Disable other extensions temporarily to identify conflicts</li>
+                    <li>Clear browser cache and cookies</li>
+                    <li>Update Chrome to the latest version</li>
+                </ol>
+            </div>
+
+            <div class="help-article">
+                <h4>Settings not saving</h4>
+                <p>If your preferences aren't being saved:</p>
+                <ul>
+                    <li>Ensure you click "Save Settings" after making changes</li>
+                    <li>Check if your browser allows local storage</li>
+                    <li>Try clearing extension data and reconfiguring</li>
+                    <li>Make sure you're not in Incognito mode (unless extension is enabled for it)</li>
+                </ul>
+            </div>
+
+            <div class="help-article">
+                <h4>Extension not working on specific websites</h4>
+                <p>Some websites have restrictions:</p>
+                <ul>
+                    <li>Chrome Web Store pages don't allow extensions to run</li>
+                    <li>Banking and secure sites may block extensions</li>
+                    <li>PDF viewers might have limited support</li>
+                    <li>This is a browser security feature, not a BhashaZap issue</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Languages Section -->
+        <div class="help-section" id="languages">
+            <h2>🌍 Languages & Translations</h2>
+
+            <div class="help-article">
+                <h4>Which languages are supported?</h4>
+                <p><strong>BhashaZap supports 13 Indian languages:</strong></p>
+                <ul>
+                    <li>Hindi (हिंदी)</li>
+                    <li>Kannada (ಕನ್ನಡ)</li>
+                    <li>Marathi (मराठी)</li>
+                    <li>Malayalam (മലയാളം)</li>
+                    <li>Gujarati (ગુજરાતી)</li>
+                    <li>Tamil (தமிழ்)</li>
+                    <li>Telugu (తెలుగు)</li>
+                    <li>Urdu (اردو)</li>
+                    <li>Assamese (অসমীয়া)</li>
+                    <li>Odia (ଓଡ଼ିଆ)</li>
+                    <li>Bengali (বাংলা)</li>
+                    <li>Punjabi (ਪੰਜਾਬੀ)</li>
+                </ul>
+                <p>You can select any two languages to display alongside English.</p>
+            </div>
+
+            <div class="help-article">
+                <h4>Why can I only select two languages?</h4>
+                <p>We limit to two languages to:</p>
+                <ul>
+                    <li>Keep the popup clean and readable</li>
+                    <li>Prevent information overload</li>
+                    <li>Ensure fast loading times</li>
+                    <li>Maintain a good user experience</li>
+                </ul>
+                <p>You can change your language selection anytime in settings.</p>
+            </div>
+
+            <div class="help-article">
+                <h4>Will more languages be added?</h4>
+                <p>We're continuously working to expand language support. Future additions may include:</p>
+                <ul>
+                    <li>More Indian regional languages</li>
+                    <li>Sanskrit</li>
+                    <li>Other South Asian languages</li>
+                </ul>
+                <p>Follow our updates or send language requests via the feedback form!</p>
+            </div>
+
+            <div class="help-article">
+                <h4>How accurate are the translations?</h4>
+                <p>We strive for high accuracy, but please note:</p>
+                <ul>
+                    <li>Most common words have accurate translations</li>
+                    <li>Context-dependent meanings may vary</li>
+                    <li>Technical terms might have limited translations</li>
+                    <li>Slang or informal language may not always be available</li>
+                </ul>
+                <p><strong>Important:</strong> Don't rely on BhashaZap for critical translations like medical, legal, or official documents.</p>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="help-section">
+            <h2>Quick Links</h2>
+            <div class="quick-links">
+                <div class="quick-link">
+                    <a href="faq.html">📖 View All FAQs</a>
+                </div>
+                <div class="quick-link">
+                    <a href="privacy-policy.html">🔒 Privacy Policy</a>
+                </div>
+                <div class="quick-link">
+                    <a href="terms-of-service.html">📜 Terms of Service</a>
+                </div>
+                <div class="quick-link">
+                    <a href="feedback.html">💬 Send Feedback</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="contact-box">
+            <h3>Still Need Help?</h3>
+            <p>Can't find what you're looking for? We're here to assist you!</p>
+            <a href="mailto:bhashazap2025@gmail.com">📧 Email Support</a>
+            <a href="https://github.com/rajeevchavan-bashazap/bhashazap/issues" target="_blank">🐛 Report Issue on GitHub</a>
+            <a href="feedback.html">💬 Send Feedback</a>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem;">We typically respond within 24-48 hours</p>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function searchHelp() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (!searchTerm) {
+                alert('Please enter a search term');
+                return;
+            }
+
+            const articles = document.querySelectorAll('.help-article');
+            let found = false;
+
+            articles.forEach(article => {
+                const text = article.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    article.style.display = 'block';
+                    article.style.background = '#fffacd';
+                    if (!found) {
+                        article.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        found = true;
+                    }
+                    setTimeout(() => {
+                        article.style.background = '#f8fbff';
+                    }, 3000);
+                } else {
+                    article.style.display = 'block';
+                }
+            });
+
+            if (!found) {
+                alert('No results found for "' + searchTerm + '". Try different keywords or contact support.');
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchHelp();
+            }
+        });
+    </script>
+</body>
+</html>

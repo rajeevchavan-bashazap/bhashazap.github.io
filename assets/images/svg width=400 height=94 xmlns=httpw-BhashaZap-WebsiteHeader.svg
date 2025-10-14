@@ -1,0 +1,11 @@
+<svg width="400" height="94" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 94">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+    .alata { font-family: 'Alata', Arial, sans-serif; font-size:66px; font-weight:normal; }
+    .bhasha { fill: #02b0f5; }
+    .zap { fill: #ff9933; }
+  </style>
+  <text x="12" y="68" class="alata" letter-spacing="-1.2">
+    <tspan class="bhasha">Bhasha</tspan><tspan class="zap">Zap</tspan>
+  </text>
+</svg>

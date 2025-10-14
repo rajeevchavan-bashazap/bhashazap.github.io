@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BhashaZap - Instant English to Indian Language Translation</title>
+    <meta name="description" content="BhashaZap extension shows instant English word meanings in 13 Indian languages. Double-click any word for translations in Hindi, Tamil, Telugu, Kannada & more.">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon and PWA -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/assets/images/android-chrome-192x192.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4FC3F7">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <span class="logo-full">
+                    <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span>
+                </span>
+                <span class="logo-icon" style="width: 32px; height: 32px; background: linear-gradient(135deg, #4FC3F7, #FF5722); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">B</span>
+            </a>
+            <ul class="nav-links">
+                <li><a onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'});">Features</a></li>
+                <li><a onclick="document.getElementById('languages').scrollIntoView({behavior: 'smooth'});">Languages</a></li>
+                <li><a onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'});">How It Works</a></li>
+                <li><a onclick="document.getElementById('faq').scrollIntoView({behavior: 'smooth'});">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a class="cta-btn" onclick="alert('Chrome Web Store link will be added when extension is published')">
+                <span class="cta-full">Download Free</span>
+                <span class="cta-mobile">Get App</span>
+            </a>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <div style="font-size: 3.5rem; font-weight: 700;">
+                    <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span>
+                </div>
+            </div>
+            <h1>Instant English to Indian Language Translation</h1>
+            <p>Double-click any English word on any webpage to get instant meanings in your preferred Indian languages. Support for 13 regional languages including Hindi, Tamil, Telugu, Kannada and more.</p>
+            <div class="hero-buttons">
+                <a class="btn-primary" onclick="alert('Chrome Web Store link will be added when extension is published')">Add to Chrome - Free</a>
+                <a class="btn-secondary" onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'});">Watch Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="downloads-section" id="downloads">
+        <div class="downloads-content">
+            <h2>Download & Installation</h2>
+            
+            <div class="tabs">
+                <button class="tab active" onclick="openTab(event, 'bhashazap-web')"><span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> (Web Version)</button>
+                <button class="tab" onclick="openTab(event, 'bhashamo-mobile')"><span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Mo</span> (Mobile Version)</button>
+                <button class="tab" onclick="openTab(event, 'lantra')"><span style="color: #02b0f5;">Lan</span><span style="color: #ff9933;">Tra</span></button>
+            </div>
+
+            <div id="bhashazap-web" class="tab-content active">
+                <h3 style="color: #4FC3F7; margin-bottom: 1.5rem; font-size: 1.8rem;"><span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> - Chrome Extension</h3>
+                <p style="color: #666; margin-bottom: 2rem; font-size: 1.1rem;">Install <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> for your desktop browser and start translating instantly</p>
+                
+                <div class="download-steps">
+                    <div class="download-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h3>Open Chrome Web Store</h3>
+                            <p>Visit the Chrome Web Store on your Chrome browser</p>
+                        </div>
+                    </div>
+                    
+                    <div class="download-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h3>Search for <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span></h3>
+                            <p>Type "<span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span>" in the search bar or visit our extension page directly</p>
+                        </div>
+                    </div>
+                    
+                    <div class="download-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h3>Click "Add to Chrome"</h3>
+                            <p>Click the blue "Add to Chrome" button on the extension page</p>
+                        </div>
+                    </div>
+                    
+                    <div class="download-step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h3>Confirm Installation</h3>
+                            <p>Click "Add extension" in the popup dialog to confirm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="download-step">
+                        <div class="step-num">5</div>
+                        <div class="step-content">
+                            <h3>Start Using</h3>
+                            <p>The <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> icon will appear in your toolbar. Click it to select your preferred languages and start translating!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a class="btn-primary" onclick="alert('Chrome Web Store link will be added when extension is published')">Download <span style="color: white;">BhashaZap</span></a>
+                </div>
+            </div>
+
+            <div id="bhashamo-mobile" class="tab-content">
+                <h3 style="color: #4FC3F7; margin-bottom: 1.5rem; font-size: 1.8rem;"><span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Mo</span> - Mobile Version</h3>
+                <p style="color: #666; margin-bottom: 2rem; font-size: 1.1rem;">Get instant translations on your mobile device with <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Mo</span></p>
+                
+                <div class="download-steps">
+                    <div class="download-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h3>Open App Store</h3>
+                            <p>Open Google Play Store (Android) or Apple App Store (iOS) on your mobile device</p>
+                        </div>
+                    </div>
+                    
+                    <div class="download-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h3>Search for <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Mo</span></h3>
+                            <p>Type "<span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Mo</span>" in the app store search bar</p>
+                        </div>
+                    </div>
+                    
+                    <div class="download-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h3>Download & Install</h3>
+                            <p>Tap "Install" or "Get" button to download and install <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Mo</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="download-step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h3>Open <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Mo</span></h3>
+                            <p>Once installed, open the app and grant necessary permissions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="download-step">
+                        <div class="step-num">5</div>
+                        <div class="step-content">
+                            <h3>Configure Languages</h3>
+                            <p>Select your preferred Indian languages and start translating on mobile!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a class="btn-primary" onclick="alert('Google Play Store link will be added')">Download for Android</a>
+                    <a class="btn-primary" onclick="alert('Apple App Store link will be added')">Download for iOS</a>
+                </div>
+            </div>
+
+            <div id="lantra" class="tab-content">
+                <div class="coming-soon-box">
+                    <h3>🚀 <span style="color: #02b0f5;">Lan</span><span style="color: #ff9933;">Tra</span></h3>
+                    <p>Coming Soon...</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Stay tuned for our next exciting product!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-section" id="demo">
+        <div class="demo-content">
+            <h2>See <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> in Action</h2>
+            <p>Watch how easy it is to translate English words instantly while browsing any website.</p>
+            <div class="demo-gallery">
+                <div class="demo-item">
+                    <img src="/assets/images/Language-Selection-1_600x400.png" alt="BhashaZap Language Selection Interface" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 2px solid #e3f2fd;">
+                    <p style="margin-top: 1rem; color: #666; text-align: center; font-weight: 500;">Extension settings panel - Select your preferred languages</p>
+                </div>
+                <div class="demo-item">
+                    <video controls style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); background: #000;">
+                        <source src="/assets/videos/bhashazap-demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p style="margin-top: 1rem; color: #666; text-align: center; font-weight: 500;">Live demo showing extension in action</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="color: #4FC3F7; margin-bottom: 2rem; font-size: 1.8rem;">More Screenshots</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                    <div>
+                        <img src="/assets/images/POP_SS_1_800x600.png" alt="BhashaZap Translation Popup" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); border: 2px solid #e3f2fd;">
+                        <p style="margin-top: 0.8rem; color: #666; font-size: 0.95rem;">Translation popup with word meanings</p>
+                    </div>
+                    <div>
+                        <img src="/assets/images/Language-Selection-2_600x400.png" alt="BhashaZap Settings Panel" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); border: 2px solid #e3f2fd;">
+                        <p style="margin-top: 0.8rem; color: #666; font-size: 0.95rem;">Configure popup duration and preferences</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="features-content">
+            <h2>Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Translation</h3>
+                    <p>Double-click any English word and get immediate translations in your selected Indian languages. No page reload required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>13 Indian Languages</h3>
+                    <p>Supports Hindi, Kannada, Marathi, Malayalam, Gujarati, Tamil, Telugu, Urdu, Assamese, Odia, Bengali, and Punjabi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Customizable</h3>
+                    <p>Choose any two Indian languages alongside English for personalized trilingual definitions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>Works locally without sending your data externally. Your browsing remains private and secure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimized performance that doesn't slow down your browser or interfere with your browsing experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Universal Compatible</h3>
+                    <p>Works on all websites - news portals, social media, educational sites, blogs, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="languages" id="languages">
+        <div class="languages-content">
+            <h2>13 Supported Languages</h2>
+            <p><span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> supports major Indian languages, covering over 1.2 billion speakers</p>
+            <div class="languages-grid">
+                <div class="language-card"><h3>हिंदी</h3><p>Hindi</p></div>
+                <div class="language-card"><h3>ಕನ್ನಡ</h3><p>Kannada</p></div>
+                <div class="language-card"><h3>मराठी</h3><p>Marathi</p></div>
+                <div class="language-card"><h3>മലയാളം</h3><p>Malayalam</p></div>
+                <div class="language-card"><h3>ગુજરાતી</h3><p>Gujarati</p></div>
+                <div class="language-card"><h3>தமிழ்</h3><p>Tamil</p></div>
+                <div class="language-card"><h3>తెలుగు</h3><p>Telugu</p></div>
+                <div class="language-card"><h3>اردو</h3><p>Urdu</p></div>
+                <div class="language-card"><h3>অসমীয়া</h3><p>Assamese</p></div>
+                <div class="language-card"><h3>ଓଡ଼ିଆ</h3><p>Odia</p></div>
+                <div class="language-card"><h3>বাংলা</h3><p>Bengali</p></div>
+                <div class="language-card"><h3>ਪੰਜਾਬੀ</h3><p>Punjabi</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="how-content">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Install Extension</h3>
+                    <p>Add <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> to Chrome from the Chrome Web Store. It's completely free and takes just one click.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Select Languages</h3>
+                    <p>Choose your preferred two Indian languages from our list of 13 supported languages.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Start Browsing</h3>
+                    <p>Visit any website and double-click on any English word you want to translate.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Get Instant Results</h3>
+                    <p>View word meanings in your chosen languages plus English definitions in a clean popup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-content">
+            <h2>Trusted by Users Across India</h2>
+            <div class="stats-grid">
+                <div class="stat"><div class="stat-number">10K+</div><div class="stat-label">Active Users</div></div>
+                <div class="stat"><div class="stat-number">13</div><div class="stat-label">Languages Supported</div></div>
+                <div class="stat"><div class="stat-number">500K+</div><div class="stat-label">Translations Served</div></div>
+                <div class="stat"><div class="stat-number">4.8</div><div class="stat-label">User Rating</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section-home" id="faq">
+        <div class="faq-content">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>What is <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span>?</h3>
+                    <p><span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> is a Chrome browser extension that provides instant English-to-Indian language translations. Simply double-click any English word on any webpage to see its meaning in your selected Indian languages.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Which languages are supported?</h3>
+                    <p>We support 13 Indian languages including Hindi, Kannada, Marathi, Malayalam, Gujarati, Tamil, Telugu, Urdu, Assamese, Odia, Bengali, and Punjabi.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Is <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> free to use?</h3>
+                    <p>Yes! <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> is completely free to download and use. There are no hidden charges, subscriptions, or premium features.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>How do I install <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span>?</h3>
+                    <p>Visit the Chrome Web Store, search for "<span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span>", click "Add to Chrome", and confirm. The icon will appear in your browser toolbar.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Is my browsing data collected?</h3>
+                    <p>No. <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span> is privacy-first. We do not collect, store, or share your browsing data or personal information. All translations happen locally on your device.</p>
+                </div>
+                <div class="faq-card">
+                    <h3>Can I adjust the popup duration?</h3>
+                    <p>Yes! You can set the popup display duration to 5, 10, 15, 20, 25, or 30 seconds according to your reading speed preference.</p>
+                </div>
+            </div>
+            <div class="view-all-faq">
+                <a href="faq.html" target="_blank">View All FAQs →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3><span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span></h3>
+                    <p>Making the web accessible in Indian languages. Bridging the language gap one word at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 style="color: #4FC3F7;">Quick Links</h3>
+                    <ul>
+                        <li><a onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'});">Features</a></li>
+                        <li><a onclick="document.getElementById('languages').scrollIntoView({behavior: 'smooth'});">Languages</a></li>
+                        <li><a onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'});">How It Works</a></li>
+                        <li><a onclick="document.getElementById('faq').scrollIntoView({behavior: 'smooth'});">FAQ</a></li>
+                        <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" target="_blank">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 style="color: #4FC3F7;">Support</h3>
+                    <ul>
+                        <li><a href="mailto:bhashazap2025@gmail.com">Contact - Email: bhashazap2025@gmail.com</a></li>
+                        <li><a href="https://github.com/rajeevchavan-bashazap/bhashazap/issues" target="_blank">GitHub (Report Issues)</a></li>
+                        <li><a onclick="document.getElementById('faq').scrollIntoView({behavior: 'smooth'});">FAQ</a></li>
+                        <li><a href="help-center.html" target="_blank">Help Center</a></li>
+                        <li><a href="feedback.html" target="_blank">Send Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span>. All rights reserved. Made with ❤️ for India's linguistic diversity.</p>
+                <div style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: center;">
+                    <div style="background: white; padding: 0.8rem 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <div style="color: #333; font-weight: bold; font-size: 1rem; letter-spacing: 0.5px; text-align: center;">MAKE IN INDIA</div>
+                        <div style="color: #666; font-size: 0.75rem; text-align: center;">Proudly Indian</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabs;
+            
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>

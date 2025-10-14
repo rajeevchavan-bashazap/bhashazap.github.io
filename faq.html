@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - BhashaZap | Frequently Asked Questions</title>
+    <meta name="description" content="Find answers to common questions about BhashaZap extension. Learn how to use, install, and troubleshoot the English to Indian language translator.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faq-page {
+            background: #f8fbff;
+            padding: 8rem 2rem 4rem;
+            min-height: 100vh;
+        }
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .faq-header h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .faq-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+        .category-title {
+            font-size: 1.8rem;
+            color: #4FC3F7;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #4FC3F7;
+        }
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(79, 195, 247, 0.2);
+            transform: translateY(-2px);
+        }
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #4FC3F7;
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #666;
+            line-height: 1.8;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        .back-home {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .back-home a {
+            display: inline-block;
+            background: #4FC3F7;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .back-home a:hover {
+            background: #29B6F6;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <span class="logo-full">
+                    <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span>
+                </span>
+                <span class="logo-icon" style="width: 32px; height: 32px; background: linear-gradient(135deg, #4FC3F7, #FF5722); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">B</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#languages">Languages</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a class="cta-btn" href="index.html#downloads">
+                <span class="cta-full">Download Free</span>
+                <span class="cta-mobile">Get App</span>
+            </a>
+        </nav>
+    </header>
+
+    <section class="faq-page">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h1>Frequently Asked Questions</h1>
+                <p>Everything you need to know about <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span></p>
+            </div>
+
+            <div class="faq-category">
+                <h2 class="category-title">Getting Started</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is BhashaZap?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        BhashaZap is a Chrome browser extension that provides instant English-to-Indian language translations. Simply double-click any English word on any webpage to see its meaning in your selected Indian languages. It supports 13 major Indian languages and makes browsing the web more accessible for Indian language speakers.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I install BhashaZap?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Installing BhashaZap is simple: 1) Visit the Chrome Web Store, 2) Search for "BhashaZap", 3) Click "Add to Chrome", 4) Confirm by clicking "Add extension", 5) The BhashaZap icon will appear in your browser toolbar. Click it to configure your preferred languages and start translating!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is BhashaZap free to use?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! BhashaZap is completely free to download and use. There are no hidden charges, subscriptions, premium features, or in-app purchases. We believe language translation should be accessible to everyone.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2 class="category-title">Features & Usage</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Which languages are supported?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        BhashaZap supports 13 Indian languages: Hindi (हिंदी), Kannada (ಕನ್ನಡ), Marathi (मराठी), Malayalam (മലയാളം), Gujarati (ગુજરાતી), Tamil (தமிழ்), Telugu (తెలుగు), Urdu (اردو), Assamese (অসমীয়া), Odia (ଓଡ଼ିଆ), Bengali (বাংলা), and Punjabi (ਪੰਜਾਬੀ). You can select any two of these languages to display alongside English definitions.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I use BhashaZap?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Using BhashaZap is very simple: 1) Make sure the extension is enabled (check the toolbar icon), 2) Visit any website, 3) Double-click on any English word you want to translate, 4) A popup will appear instantly showing the word's meaning in English and your two selected Indian languages. The popup will automatically disappear after the configured duration.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I change the languages after installation?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! Click the BhashaZap icon in your browser toolbar to open the settings panel. From there, you can change your language preferences at any time. Simply select two new languages from the dropdown menus and click save. Your new language choices will take effect immediately.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I adjust the popup duration?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! You can customize how long the translation popup stays visible. Click the BhashaZap icon in your toolbar, and you'll find a "Popup Duration" setting. You can choose from 5, 10, 15, 20, 25, or 30 seconds depending on your reading speed. The default is 10 seconds.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does BhashaZap work on all websites?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        BhashaZap works on most websites including news portals, social media, blogs, educational sites, and more. However, it may not work on some websites with special security restrictions or those that don't allow browser extensions to interact with their content. It works best on standard web pages with text content.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2 class="category-title">Privacy & Security</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is my browsing data collected?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No. BhashaZap is privacy-first. We do not collect, store, or share your browsing data, personal information, search history, or the words you translate. All translations happen locally using the built-in dictionary data. Your privacy is our top priority.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does BhashaZap require an internet connection?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        BhashaZap works offline! Once installed, all dictionary data is stored locally in your browser. You don't need an active internet connection to translate words. This also means faster translations and better privacy since no data is sent to external servers.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is BhashaZap safe to use?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, BhashaZap is completely safe. The extension only accesses the text you double-click on for translation purposes. It doesn't track your browsing, access your passwords, read your personal data, or make any changes to websites. We follow Chrome Web Store's strict security guidelines.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2 class="category-title">Troubleshooting</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        The extension isn't working. What should I do?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Try these steps: 1) Check if the extension is enabled (the icon should be colored, not grayed out), 2) Refresh the webpage you're on, 3) Try restarting your browser, 4) Make sure you're double-clicking on English words only, 5) Check if the website allows extensions to run. If issues persist, try removing and reinstalling the extension.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        The popup isn't showing up when I double-click words
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Make sure: 1) BhashaZap is enabled (check the toolbar icon), 2) You're double-clicking on English words specifically, 3) The word exists in our dictionary, 4) The website allows extensions to modify content, 5) You've selected at least one Indian language in settings. Also try refreshing the page after enabling the extension.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Some words don't have translations. Why?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        BhashaZap contains a comprehensive dictionary, but some specialized, technical, or newly-coined words may not be available in all languages. We're continuously updating our dictionary. If you encounter missing words frequently, please send us feedback with examples so we can improve our database.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I disable BhashaZap temporarily?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Click the BhashaZap icon in your browser toolbar and toggle the "Extension Status" switch to OFF. This will disable translations without uninstalling the extension. You can enable it again anytime by toggling the switch back to ON. Your language preferences will be saved.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2 class="category-title">Technical Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Which browsers are supported?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Currently, BhashaZap is available for Google Chrome and Chromium-based browsers (like Microsoft Edge, Brave, Opera). We're working on versions for Firefox and Safari. Make sure you're using the latest version of your browser for the best experience.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does BhashaZap slow down my browser?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No. BhashaZap is highly optimized and uses minimal system resources. It only activates when you double-click a word, so it doesn't constantly run in the background. Most users don't notice any impact on browser performance. The extension is designed to be lightweight and fast.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I use BhashaZap on mobile devices?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        The Chrome extension currently works on desktop/laptop computers only. However, we're developing BhashaMo, a dedicated mobile app for Android and iOS that will bring similar translation features to your smartphone and tablet. Stay tuned for the mobile launch!
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-home">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-bottom">
+                <p>&copy; 2024 <span style="color: #02b0f5;">Bhasha</span><span style="color: #ff9933;">Zap</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
